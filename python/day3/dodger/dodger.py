@@ -124,7 +124,16 @@ while True:
                 # If the mouse moves, move the player where the cursor is.
                 playerRect.move_ip(event.pos[0] - playerRect.centerx, event.pos[1] - playerRect.centery)
 
-        
+        if not reverseCheat and not slowCheat:
+            baddieAddCounter += 1
+        if baddieAddCounter == ADDNEWBADDIERATE:
+            baddieAddCounter = 0
+            baddieSize = random.randint(BADDIEMINSIZE, BADDIEMAXSIZE)
+            newBaddie = {'rect': pygame.Rect(random.randint(0, WINDOWWIDTH - baddieSize), 0 - baddieSize, baddieSize, baddieSize),
+                         'speed': random.randint(BADDIEMINSPEED, BADDIEMAXSPEED),
+                         'surface': pygame.transform.scale(baddieImage, (baddieSize, baddieSize)),
+                         }
+            baddies.append(newBaddie)
 
         # Move the player around.
         if moveLeft and playerRect.left > 0:
@@ -148,4 +157,36 @@ while True:
             elif slowCheat:
                 b['rect'].move_ip(0, 1)
 
-  
+        for b in baddies[:]:
+            if b['rect'].top > WINDOWHEIGHT:
+                baddies.remove(b)
+
+        windowSurface.fill(BACKGROUNDCOLOR)
+
+        drawText('Score: %s' % (score), font, windowSurface, 10, 0)
+        drawText('Top Score: %s' % (topScore), font, windowSurface, 10, 40)
+
+        windowSurface.blit(playerImage, playerRect)
+
+        for b in baddies:
+            windowSurface.blit(b['surface'], b['rect'])
+
+        pygame.display.update()
+
+        if playerHasHitBaddie(playerRect, baddies):
+            if score > topScore:
+                topScore = score
+            break
+
+        mainClock.tick(FPS)
+
+    pygame.mixer.music.stop()
+    gameOverSound.play()
+
+    drawText('GAME OVER', font, windowSurface, (WINDOWWIDTH / 3), (WINDOWHEIGHT / 3))
+    drawText('Press a key to play again.', font, windowSurface, (WINDOWWIDTH / 3) - 80, (WINDOWHEIGHT / 3) + 50)
+
+    pygame.display.update()
+    waitForPlayerToPressKey()
+
+    gameOverSound.stop()

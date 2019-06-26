@@ -6,7 +6,7 @@ pygame.init()
 
 # set up the window
 windowSurface = pygame.display.set_mode((500, 400), 0, 32)
-pygame.display.set_caption('Hello world!')
+pygame.display.set_caption('My first app!')
 
 # set up the colors
 BLACK = (0, 0, 0)
@@ -16,7 +16,7 @@ GREEN = (0, 255, 0)
 BLUE = (0, 0, 255)
 
 # set up fonts
-basicFont = pygame.font.SysFont(None, 48)
+basicFont = pygame.font.SysFont('TimesNewRoman', 28)
 
 # set up the text
 text = basicFont.render('Hello world!', True, WHITE, BLUE)
@@ -31,7 +31,7 @@ windowSurface.fill(WHITE)
 pygame.draw.polygon(windowSurface, GREEN, ((146, 0), (291, 106), (236, 277), (56, 277), (0, 106)))
 
 # draw some blue lines onto the surface
-pygame.draw.line(windowSurface, BLUE, (60, 60), (120, 60), 4)
+pygame.draw.line(windowSurface, BLUE, (60, 60), (120, 60), 8)
 pygame.draw.line(windowSurface, BLUE, (120, 60), (60, 120))
 pygame.draw.line(windowSurface, BLUE, (60, 120), (120, 120), 4)
 
