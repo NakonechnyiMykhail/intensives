@@ -1,0 +1,17 @@
+{'content_type': 'text', 'message_id': 12, 'from_user': {'id': 156691468, 'first_name': 'Mikhail', 'username': 'm1ss10n', 'last_name': None}, 'date': 1561625138, 'chat': {'type': 'private', 'last_name': None, 'first_name': 'Mikhail', 'username': 'm1ss10n', 'id': 156691468, 'title': None, 'all_members_are_administrators': None}, 'forward_from_chat': None, 'forward_from': None, 'forward_date': None, 'reply_to_message': None, 'edit_date': None, 'text': '/start', 'entities': [<telebot.types.MessageEntity object at 0x105ef2c18>], 'audio': None, 'document': None, 'photo': None, 'sticker': None, 'video': None, 'voice': None, 'caption': None, 'contact': None, 'location': None, 'venue': None, 'new_chat_member': None, 'left_chat_member': None, 'new_chat_title': None, 'new_chat_photo': None, 'delete_chat_photo': None, 'group_chat_created': None, 'supergroup_chat_created': None, 'channel_chat_created': None, 'migrate_to_chat_id': None, 'migrate_from_chat_id': None, 'pinned_message': None}
+{'content_type': 'text', 'message_id': 14, 'from_user': {'id': 156691468, 'first_name': 'Mikhail', 'username': 'm1ss10n', 'last_name': None}, 'date': 1561625144, 'chat': {'type': 'private', 'last_name': None, 'first_name': 'Mikhail', 'username': 'm1ss10n', 'id': 156691468, 'title': None, 'all_members_are_administrators': None}, 'forward_from_chat': None, 'forward_from': None, 'forward_date': None, 'reply_to_message': None, 'edit_date': None, 'text': 'asd', 'entities': None, 'audio': None, 'document': None, 'photo': None, 'sticker': None, 'video': None, 'voice': None, 'caption': None, 'contact': None, 'location': None, 'venue': None, 'new_chat_member': None, 'left_chat_member': None, 'new_chat_title': None, 'new_chat_photo': None, 'delete_chat_photo': None, 'group_chat_created': None, 'supergroup_chat_created': None, 'channel_chat_created': None, 'migrate_to_chat_id': None, 'migrate_from_chat_id': None, 'pinned_message': None}
+
+
+Убедитесь, что все последующие действия
+совершаются именно для той версии Python,
+которой запускается бот.
+Если Python 3-й версии, то выполните
+
+pip3 uninstall telebot
+
+, затем
+
+pip3 install pytelegrambotapi --upgrade
+
+.
+Желательно перелогиниться или перезагрузиться.
